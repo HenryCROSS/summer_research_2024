@@ -1,31 +1,27 @@
 import { ReactNode } from "react";
-import "../globals.css";
 import Image from "next/image";
 
-export function HeroIMG(children) {
+interface HeroIMGProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+  src: string;
+  alt: string;
+}
+
+export function HeroIMG({
+  children,
+  className,
+  src,
+  alt,
+  ...rest
+}: HeroIMGProps) {
+  console.log(src);
+
   return (
-    <div
-      className=""
-      style={{ position: "relative", width: "100%", height: "505px" }}
-    >
-      <div style={{ zIndex: -1 }}>
-        <Image
-          priority
-          src={"/images/bigstock-147279827.webp"}
-          alt="Hero Image"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
+    <div className="relative w-full h-[505px]">
+      <div className="absolute inset-0 z-[-1]">
+        <Image className="object-cover" src={src} alt={alt} fill priority />
       </div>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <div className="absolute inset-0 flex items-center justify-center text-white">
         {children}
       </div>
     </div>
