@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
 // import { lusitana } from '@/app/ui/fonts';
 import {
   AtSymbolIcon,
   KeyIcon,
   ExclamationCircleIcon,
-} from '@heroicons/react/24/outline';
-import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Button } from '../button';
-import { useFormState, useFormStatus } from 'react-dom';
+} from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import { Button } from "../button";
+import { useFormState, useFormStatus } from "react-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 // import { authenticate } from '@/app/lib/actions';
 
 export default function LoginForm() {
-//   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  //   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
   return (
     <form className="space-y-3">
-    {/* <form action={dispatch} className="space-y-3"> */}
+      {/* <form action={dispatch} className="space-y-3"> */}
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
         {/* <h1 className={`${lusitana.className} mb-3 text-2xl`}> */}
-        <h1 className={`mb-3 text-2xl`}>
-          Please log in to continue.
-        </h1>
+        <h1 className={`mb-3 text-2xl`}>Please log in to continue.</h1>
         <div className="w-full">
           <div>
             <label
@@ -73,9 +73,15 @@ function LoginButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button className="mt-4 w-full">
-    {/* <Button className="mt-4 w-full" aria-disabled={pending}> */}
+    // <Button className="mt-4 w-full" onClick={}>
+    //   {/* <Button className="mt-4 w-full" aria-disabled={pending}> */}
+    //   Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+    // </Button>
+    <Link
+      className="mt-4 w-full flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      href={"/dashboard"}
+    >
       Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    </Button>
+    </Link>
   );
 }

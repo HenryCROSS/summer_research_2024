@@ -1,22 +1,26 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { HeroIMG } from "./ui/hero_image";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Home() {
   return (
     <main>
       <HeroIMG src="/images/bigstock-147279827.webp" alt="HeroIMG">
-        {/* <h1 className="text-4xl font-bold">Welcome to My Website</h1> */}
-        {/* <p className="text-lg">Discover amazing things here!</p> */}
-        {/* gggggg */}
-        <div className="grid grid-flow-col auto-cols-max">
-          <div>01</div>
-          <div>02</div>
-          <div>03</div>
-        </div>
-        <div className="grid grid-flow-row auto-rows-max">
-          <div>015</div>
-          <div>025</div>
-          <div>035</div>
+        <div className="grid grid-flow-rows auto-rows-fr">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          <Link
+            href={"/login"}
+            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+          >
+            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link>
         </div>
       </HeroIMG>
       dasdadsadsds
