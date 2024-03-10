@@ -14,7 +14,7 @@ import Link from "next/link";
 // import { authenticate } from '@/app/lib/actions';
 
 export default function LoginForm() {
-  //   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+    // const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
   return (
     <form className="space-y-3">
@@ -63,7 +63,10 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <LoginButton />
+        {/* <Button type="submit" className="mt-4 w-full">
+          Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+        </Button> */}
+        <LoginButton></LoginButton>
       </div>
     </form>
   );
@@ -73,12 +76,8 @@ function LoginButton() {
   const { pending } = useFormStatus();
 
   return (
-    // <Button className="mt-4 w-full" onClick={}>
-    //   {/* <Button className="mt-4 w-full" aria-disabled={pending}> */}
-    //   Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    // </Button>
     <Link
-      className="mt-4 w-full flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      className="mt-4 w-full flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       href={"/dashboard"}
     >
       Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />

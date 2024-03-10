@@ -5,7 +5,7 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full h-full">
       <HeroIMG src="/images/bigstock-147279827.webp" alt="HeroIMG">
         <div className="grid grid-flow-rows auto-rows-fr">
             <div></div>
